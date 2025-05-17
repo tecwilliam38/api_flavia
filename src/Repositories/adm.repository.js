@@ -30,7 +30,7 @@ async function RegisterAdmin(name, email, password) {
 
 
 async function ListarByEmailAdmin(email) {
-    let sql = `select * from admins where email = $1`;
+    let sql = `select * from admin where email = $1`;
     try {
         const admin = await pool.query(sql, [email]);
 
