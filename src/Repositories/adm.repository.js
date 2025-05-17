@@ -45,7 +45,7 @@ async function ListarByEmailAdmin(email) {
 
 async function ProfileAdmin(id_admin) {
 
-    let sql = `select id_user, name, email from users where id_user = $1`;
+    let sql = `select id_admin, name, email from admin where id_admin = $1`;
 
     const admin = await pool.query(sql, [id_admin]);
 

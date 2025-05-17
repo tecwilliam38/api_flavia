@@ -16,7 +16,7 @@ const pool = new Pool({
     // pool_mode:"transaction",
 });
 
-
+// Teste de Conexção
   async function testConnection() {
        try {
          const client = await pool.connect();
