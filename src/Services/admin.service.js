@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "../../token.js"
 
-import repoAdmin from "../Repositories/adm.repository.js"
+ import repoAdmin from "../Repositories/adm.repository.js"
 
 async function RegisterAdmin(name, email, password) {
     const hashPassword = await bcrypt.hash(password, 10);

@@ -1,10 +1,9 @@
-import ServiceAdmin from "../Services/admin.service"
+import ServiceAdmin from '../Services/admin.service.js' 
 
 async function RegisterAdmin(req, res){
     const {name, email, password} = req.body;
     const admin = await ServiceAdmin.RegisterAdmin(name, email, password)
-
-    res.status(200).json(admin);
+    res.status(200).json(admin)
 }
 async function LoginAdmin(req, res){
     const {email, password} = req.body;
@@ -23,3 +22,4 @@ async function ProfileAdmin(req, res){
 }
 
 export default {RegisterAdmin, LoginAdmin, ProfileAdmin};
+

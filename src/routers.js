@@ -12,7 +12,7 @@ router.get("/users/profile", jwt.ValidateToken, ControllerUser.Profile);
 
 
 // Admin
-router.post("/admin/register", ControllerAdmin.Register);
+router.post("/admin/register", ControllerAdmin.RegisterAdmin);
 router.post("/admin/login", ControllerUser.Login);
 router.get("/admin/profile", jwt.ValidateToken, ControllerUser.Profile);
 

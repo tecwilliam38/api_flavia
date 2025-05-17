@@ -4,7 +4,7 @@ import pool from "../DataBase/postgres.db.js"
 async function RegisterAdmin(name, email, password) {
     async function verfiyEmail() {
         try {
-            const query = 'SELECT count(*) FROM users WHERE email = $1';
+            const query = 'SELECT count(*) FROM admin WHERE email = $1';
             const result = await pool.query(query, [email]);
             //Testede github
 
@@ -16,9 +16,9 @@ async function RegisterAdmin(name, email, password) {
     }
     const resultEmail = await verfiyEmail(email);
     if (resultEmail) {
-        console.log("Email já cadastrado!");
+        console.log("Email já cadastrado!");     
     } else {
-        let sql = `insert into admins(name, email, password) values($1, $2, $3)
+        let sql = `insert into admin(name, email, password) values($1, $2, $3)
      returning id_admin`;
 
         const admin = await pool.query(sql, [name, email, password]);
