@@ -4,8 +4,8 @@ import ControllerUser from "./Controllers/user.controller.js"
 import ControllerAdmin from "./Controllers/admin.controller.js"
 
 const router = Router();
-// hoje
 // User
+// router.get("/users",)
 router.post("/users/register", ControllerUser.Register);
 router.post("/users/login", ControllerUser.Login);
 router.get("/users/profile", jwt.ValidateToken, ControllerUser.Profile);
